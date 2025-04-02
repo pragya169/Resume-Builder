@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .hero {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 50px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cta-button {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #e67e22;
+        }
+        .resume-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .input-field, .textarea-field {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+        .upload-button, .generate-button {
+            padding: 12px 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .upload-button {
+            background: #3498db;
+            color: white;
+        }
+        .upload-button:hover {
+            background: #2980b9;
+        }
+        .generate-button {
+            background: #27ae60;
+            color: white;
+        }
+        .generate-button:hover {
+            background: #219150;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Landing Page Section -->
+        <div class="hero">
+            <h1>Smart Resume Builder</h1>
+            <p>Build professional, ATS-friendly resumes effortlessly with AI-powered insights.</p>
+            <button class="cta-button">Start Building Your Resume</button>
+        </div>
+
+        <!-- Resume Form Section -->
+        <div class="resume-card">
+            <form action="http://127.0.0.1:5001/generate" method="POST">
+                <input type="text" name="full_name" placeholder="Full Name" class="input-field" required>
+                <input type="email" name="email" placeholder="Email" class="input-field" required>
+                <input type="tel" name="phone" placeholder="Phone Number" class="input-field" required>
+                <textarea name="summary" placeholder="Professional Summary" class="textarea-field" required></textarea>
+                <textarea name="skills" placeholder="Skills" class="textarea-field" required></textarea>
+                <textarea name="experience" placeholder="Work Experience" class="textarea-field" required></textarea>
+                
+                <div class="button-group">
+                    <button type="button" class="upload-button">📤 Upload Resume</button>
+                    <button type="submit" class="generate-button">Generate Resume</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
